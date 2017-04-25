@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        *{margin: 0;padding:０}
+        ul,li{margin: 0 auto;padding: 0}
+        img{display: block;font-size: 0px;margin: 0 auto;}
+    </style>
+    <link rel="stylesheet" href="bxslide.css">
+    <title>苹果轮播图</title>
+</head>
+<body>
+
+<div class="gallery-container with-paddlenav-onhover">
+    <nav id="dotnav" class="dotnav">
+        <ul>
+            <li role="presentation"><a data-slide-index="0" class="dotnav-item" role="tab" tabindex="0" aria-selected="false">创立</a></li>
+            <li role="presentation"><a data-slide-index="1" class="dotnav-item" role="tab" tabindex="0" aria-selected="false">按钮内容</a></li>
+            <li role="presentation"><a data-slide-index="2" class="dotnav-item" role="tab" tabindex="0" aria-selected="false">按钮内容</a></li>
+        </ul>
+    </nav>
+    <nav class="paddlenav">
+        <ul>
+            <li><button class="paddlenav-arrow paddlenav-arrow-previous" aria-label="Previous"></button></li>
+            <li><button class="paddlenav-arrow paddlenav-arrow-next" aria-label="Next"></button></li>
+        </ul>
+    </nav>
+    <ul class="bxslider">
+    <li class="gallery-item item1">
+        <div class="hero-content">
+            <div class="hero-wrapper">
+                <figure class="hero-image hero-image-a">
+                    <div class="hero-image-inner" data-hires-status="pending"></div>
+                </figure>
+            </div>
+        </div>
+    </li>
+    <li class="gallery-item item2"></li>
+    <li class="gallery-item item3"></li>
+    </ul>
+</div>
+
+<script src="http://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="jquery.bxslider.min.js"></script>
+<script type="text/javascript">
+    // 控制轮播图的JS
+    $(document).ready(function(){
+        $('.bxslider').bxSlider({
+          auto:'true',
+          pagerCustom: $("#dotnav"),
+          prevSelector: $('.paddlenav-arrow-previous'),
+          nextSelector: $('.paddlenav-arrow-next')
+        });
+      });
+</script>
+</body>
+</html>

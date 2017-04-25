@@ -1,0 +1,295 @@
+
+/*控制轮播图在不同分辨率的区域*/
+.gallery-container {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    height: 100vh;
+    max-height: 100%;
+    min-height: 540px;
+}
+@media only screen and (max-width: 1068px) {
+    .gallery-container {
+    max-height: 960px;
+    min-height: 500px
+}
+}@media only screen and (max-width: 735px) {
+    .gallery-container {
+    max-height: 640px;
+    min-height: 420px
+}
+}.gallery-container {
+    height: -webkit-calc(100vh - 76px);
+    height: calc(100vh - 76px)
+}
+@media only screen and (min-width: 1442px) {
+    .gallery-container {
+    height: -webkit-calc(100vh - 200px);
+    height: calc(100vh - 200px)
+}
+}@media only screen and (max-width: 1068px) {
+    .gallery-container {
+    height: -webkit-calc(100vh - 80px);
+    height: calc(100vh - 80px)
+}
+}@media only screen and (max-width: 1068px) {
+    .enhanced-gallery.touch .gallery-container {
+    max-height: 100%
+}
+}
+/*每一张轮播图的详细设置*/
+.gallery-item {
+  height: 100%;
+}
+.bx-wrapper,
+.bx-viewport,
+.bxslider  {
+  height: 100% !important;
+}
+.item1{
+ 
+}
+.item2{
+    background-color: #FFF0F5;
+}
+.item3{
+    background-color: #87CEFA;
+}
+/*控制鼠标轮播图上显示左右翻转按钮*/
+.with-paddlenav-onhover .paddlenav-arrow {
+  opacity: 0;
+  -webkit-transition: 250ms background-color linear, 250ms color linear, 250ms opacity linear;
+          transition: 250ms background-color linear, 250ms color linear, 250ms opacity linear; 
+}
+.with-paddlenav-onhover .paddlenav-arrow:focus {
+    opacity: 1;
+}
+
+.with-paddlenav-onhover:hover .paddlenav-arrow {
+  opacity: 1; 
+}
+
+/*控制轮播图对应的下标*/
+.dotnav {
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    width: 100%;
+    z-index: 2;
+    pointer-events: none
+}
+.dotnav ul {
+    pointer-events: auto;
+    position: relative
+}
+.dotnav .dotnav-item:focus[data-focus-method="mouse"]:not(input):not(textarea):not(select) {
+    box-shadow: none !important;
+    outline: none !important;
+}
+.dotnav .dotnav-item:focus {
+    box-shadow: none !important;
+    outline: none !important;
+}
+.dotnav {
+    text-align: center;
+}
+html.touch .dotnav {
+    pointer-events: none
+}
+.dotnav ul {
+    display: inline-block
+}
+.dotnav li {
+    list-style: none;
+    margin: 0 5px;
+    width: 50px;
+    height: 2px;
+    float: left;
+    position: relative
+}
+.dotnav-item {
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    outline: none;
+    position: absolute;
+    background-color: #d6d6d6;
+    opacity: 0.8;
+    box-sizing: content-box;
+    padding: 0;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+    border-radius: 0;
+}
+.dotnav-item:hover {
+    background-color: #666
+}
+.dotnav-item:focus {
+    box-shadow: 0 0 0 3px rgba(131, 192, 253, 0.5);
+    outline: none
+}
+.dotnav-item:focus[data-focus-method="mouse"]:not(input):not(textarea):not(select),
+.dotnav-item:focus[data-focus-method="touch"]:not(input):not(textarea):not(select) {
+    box-shadow: none
+}
+html.ie8 .dotnav-item:focus {
+    outline: 3px solid #c1e0fe
+}
+.dotnav-item.current,
+.dotnav-item.active {
+    top: 0px;
+    left: 0px;
+    width: 50px;
+    height: 2px;
+    background-color: #666;
+    opacity: 1;
+    cursor: default
+}
+
+/*左右翻转按钮位置效果控制*/
+/*设置ul li属性none*/
+.paddlenav {
+    margin: 0;
+    list-style: none; 
+}
+/*设置轮播图左右按钮高度*/
+.paddlenav {
+    width: 100%;
+    height: 2px;
+    top: 50%;
+    position: relative;
+    z-index: 2;
+    pointer-events: none
+}
+
+.paddlenav ul {
+    margin: 0;
+    list-style: none; 
+}
+
+.paddlenav-arrow {
+    z-index: 2;
+    pointer-events: all;
+}
+
+.paddlenav-arrow-previous {
+    left: 18px;
+}
+
+.paddlenav-arrow-next {
+    right: 18px
+}
+
+/*首行缩进就不显示字体了*/
+.bx-prev,
+.bx-next {
+    display:block;
+    text-indent:-9999px;
+}
+
+/*设置按钮边框为0*/
+.paddlenav-arrow {
+    background-color: transparent;
+    border: 0;
+    border-radius: 4px;
+    color: #666;
+    display: block;
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 200;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    text-align: center;
+    -webkit-transition: 250ms opacity linear;
+    transition: 250ms opacity linear;
+    width: 64px;
+    height: 64px;
+    background:url("https://developer.apple.com/home/images/paddles_2x.png") no-repeat;
+    background-size: 130px 64px;
+}
+.paddlenav-arrow-next, .paddlenav-arrow-previous {
+    line-height: 128px;
+    margin-top: -32px;
+    top: 50%;
+    width: 64px;
+    height: 64px
+}
+.paddlenav-arrow-up, .paddlenav-arrow-down {
+    line-height: 67px;
+    margin-left: -32px;
+    left: 50%;
+    width: 64px;
+    height: 64px
+}
+.paddlenav-arrow-next {
+    background-position: -66px 0;
+}
+/*控制左右按钮鼠标指着变为可以显示的*/
+.paddlenav-arrow:hover {
+    opacity: 1;
+    text-decoration: none
+}
+
+.paddlenav-arrow:active {
+    opacity: 1
+}
+
+.paddlenav-arrow-up:before {
+    display: none
+}
+
+/*设置每一张轮播的内容*/
+.hero-content {
+    height: 100%;
+}
+.hero-wrapper {
+    height: 100%;
+    top: 0;
+    width: 100%;
+    position: absolute;
+    background: #f7f7f7;
+    pointer-events: none;
+}
+.hero-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.hero-image-inner {
+  background-repeat: no-repeat;
+  background-image: url(images/banner-1.jpg);
+  background-size:cover;
+  background-position: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+@media all and (min-width:1920px) {
+  .hero-image-inner {
+    background-size:1920px auto;
+    background-position: center;
+  }
+}
+
+@media all and (max-width:1068px) {
+  .hero-image-inner {
+    background-image: url(images/banner-1.jpg);
+    background-size:cover;
+  }
+}
+@media all and (max-width:735px) {
+  .hero-image-inner {
+    background-image: url(images/banner-1.jpg);
+    background-size:cover;
+    background-position-x: 44%;
+  }
+}
